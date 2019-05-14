@@ -1,0 +1,55 @@
+@startuml
+
+title Relationships - Class Diagram
+
+
+class PinBall {
+    +int nbTry
+    +void startGame()
+    +void loopGame()
+    +void stopGame()
+    +int getNbTry()
+}
+
+class Player {
+    +int score
+    +void addScore(int add)
+}
+
+class BallDetector {
+    +int pin_LED
+    +int pin_photo
+    +int treshold
+    +bool isDetected()
+}
+
+class Flipper {
+    +int pin_servo
+    +void up()
+    +void down()
+}
+
+class Buzzer {
+    +int pin
+    +void play(float frequence)
+}
+
+class Screen {
+    +void afficherScore()
+}
+
+class LED {
+    +int pin
+    +int state
+    +void switchOn()
+    +void switchOff()
+}
+
+PinBall "1" *-up- "2" Flipper
+PinBall "1" *-up- "*" Buzzer
+PinBall "1" *-up- "1" Screen
+PinBall "1" *-up- "1" Player
+PinBall "1" *-up- "*" BallDetector
+PinBall "1" *-up- "*" LED
+
+@enduml
