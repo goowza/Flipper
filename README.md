@@ -1,2 +1,3 @@
 # Flipper
-FlippyFlippy
+
+Jeu de Flipper programmé en C++ <3
