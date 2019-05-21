@@ -13,6 +13,9 @@ class PinBall {
 
 class Player {
     +int score
+    +String name
+    +Player()
+    +Player(String name)
     +void addScore(int add)
 }
 

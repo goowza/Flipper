@@ -4,19 +4,18 @@
 #include <mraa/aio.h>
 #include <mraa/gpio.h>
 #include <mraa.hpp>
+#include "AnalogSensor.h"
 
-#define TRESHOLD_DEFAULT 800
+#define TRESHOLD_DEFAULT 400
 
 class BallDetector {
 private:
-    mraa_aio_context aio_context;
     int treshold;
 
 public:
     BallDetector(int pin);
     bool isDetected();
     void setTreshold(int treshold);
-    int getSensorValue();
     ~BallDetector();
 };
 
