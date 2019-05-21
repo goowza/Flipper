@@ -17,21 +17,20 @@ class Player {
 }
 
 class BallDetector {
-    +int pin_LED
-    +int pin_photo
     +int treshold
+    +BallDetector()
     +bool isDetected()
+    +void setTreshold(int treshold)
+    +int getSensorValue()
+    +~BallDetector()
 }
 
 class Flipper {
-    +int pin_servo
-    +void up()
-    +void down()
+    Flipper()
 }
 
 class Buzzer {
-    +int pin
-    +void play(float frequence)
+    +void playPWM(float duty_cycle)
 }
 
 class Screen {
@@ -39,17 +38,41 @@ class Screen {
 }
 
 class LED {
-    +int pin
-    +int state
-    +void switchOn()
-    +void switchOff()
+    LED()
 }
 
+class AnalogSensor {
+    +mraa_aio_context aio_context
+    +AnalogSensor(int pin)
+    +int getSensorValue()
+}
+
+class DigitalActuator {
+    +mraa_gpio_context gpio_context
+    +int state
+    +DigitalActuator(int pin)
+    +void setHigh()
+    +void setLow()
+    +int getState()
+}
+
+class PWMActuator {
+    +mraa_pwm_context pwm_context
+    +float duty_cycle
+    +PWMActuator(int pin)
+}
+
+AnalogSensor <|-down- BallDetector
+DigitalActuator <|-down- LED
+DigitalActuator <|-down- Flipper
+PWMActuator <|-down- Buzzer
+
+
+PinBall "1" *-up- "2" BallDetector
 PinBall "1" *-up- "2" Flipper
-PinBall "1" *-up- "*" Buzzer
+PinBall "1" *-up- "1" Buzzer
 PinBall "1" *-up- "1" Screen
 PinBall "1" *-up- "1" Player
-PinBall "1" *-up- "*" BallDetector
 PinBall "1" *-up- "*" LED
 
 @enduml
