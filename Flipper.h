@@ -9,12 +9,14 @@
 
 class Flipper{
 	private:
-		mraa_gpio_context m_gpio;// Pinu
+		mraa_gpio_context m_gpio_sol;
+		mraa_gpio_context m_gpio_butt;		
 	public:
-		Flipper(int pin);
+		Flipper(int pinB, int pinS);
 		~Flipper();
-		void up();
-		void down();
+		void up(int button);
+		void down(int button, int sol);
+		void TestFlipper();
 };
 
 #endif

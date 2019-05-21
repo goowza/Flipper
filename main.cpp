@@ -11,15 +11,12 @@ using namespace std;
 
 int main(void){
 	int i = 0;
-	Flipper f(2);
-	PinBall P;
-	P.startGame();
+	Flipper f(3,2);
+	//PinBall P;
+	//P.startGame();
 	while(i == 0){
-		f.up();
+		f.TestFlipper();
 		//P.loopGame();
-		sleep(5);
-		f.down();
-		sleep(5)
 		//i = P.stopGame();
 	}
 	return 0;
