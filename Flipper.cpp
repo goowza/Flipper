@@ -3,14 +3,15 @@
 #include <iostream>
 
 Flipper::Flipper(int pin){
-	this->Pin(pin);
-	this->Pin.dir(DIR_OUT_LOW);
+	mraa_init();
+	this->m_gpio = mraa_gpio_init(pin);
+	mraa_gpio_dir(m_gpio, MRAA_GPIO_OUT);
 }
 
 void Flipper::up(){
-	this->Pin.write(1);
+	mraa_gpio_write(this->m_gpio, 1);
 }
 
 void Flipper::down(){
-	this->Pin.write(0);
+	mraa_gpio_write(this->m_gpio, 0);
 }

@@ -9,7 +9,7 @@
 
 class Flipper{
 	private:
-		Gpio Pin;// Pinu
+		mraa_gpio_context m_gpio;// Pinu
 	public:
 		Flipper(int pin);
 		~Flipper();
