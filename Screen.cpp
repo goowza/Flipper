@@ -56,9 +56,9 @@ mraa_result_t i2cReg (mraa_i2c_context ctx, int deviceAdress, int addr, uint8_t 
 }
 
 
-Screen::Screen(){
-		
+Screen::Screen(){		
 }
+
 void Screen::initScreen(){
 
     // initialisation
@@ -95,8 +95,9 @@ void Screen::Ecrire(string s){
 	}
 }
 
-void Screen::afficherScore(){
-	this->Ecrire("Le score est de 5 Points");
+void Screen::afficherScore(Player player){
+    String msg = "Score : " + to_string(player.getScore());
+	this->Ecrire(msg);
 }
 
 void Screen::clearScreen(){

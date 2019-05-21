@@ -6,11 +6,18 @@ using namespace std;
 
 PinBall::PinBall(){
 	this->nbTry = 0;
+	this->player = new Player();
+	this->sc = new Screen();
 }
 PinBall::~PinBall(){
 	
 }
 void PinBall::startGame(){
+
+	cout << "Entrez votre nom svp :" << endl;
+	cin << name << endl;
+	this->player.setName(name);
+
 	sc.initScreen();
 	sc.home();
 	sc.Ecrire("Le flipper ") ;
@@ -27,7 +34,7 @@ void PinBall::loopGame(){
 	sc.clearScreen();
 	sc.nbLine(2,1);
 	sc.home();
-	sc.Ecrire("Jeu en cours");
+	sc.afficherScore(this->player);
 }
 int PinBall::stopGame(){
 	sc.clearScreen();

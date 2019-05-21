@@ -2,12 +2,13 @@
 #define SCREEN_H
 #include <iostream>
 #include <string>
+#include "Player.h"
+
 using namespace std;
-class Screen{
-	private :
-	public : 
+class Screen {
+public: 
 		void initScreen();
-		void afficherScore();
+		void afficherScore(Player player);
 		void Ecrire(string msg);
 		void clearScreen();
 		void home();

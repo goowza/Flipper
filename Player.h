@@ -14,6 +14,8 @@ public:
     Player(String name);
 
     void addScore(int gain);
+    void setName(String name);
+    int getScore();
 
     ~Player();
 };

@@ -14,4 +14,12 @@ void Player::addScore(int gain){
     this->score += gain;
 }
 
+void setName(String name){
+    this->name = name;
+}
+
+int Player::getScore(){
+    return this->score;
+}
+
 Player::~Player(){}
