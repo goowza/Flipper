@@ -16,7 +16,6 @@ class DigitalActuator{
 		~DigitalActuator();
 		virtual void setHigh()=0;
 		virtual void setLow()=0;
-		virtual int getState()=0;
 };
 
 #endif
