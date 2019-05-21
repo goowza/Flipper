@@ -1,12 +1,7 @@
 #include "BallDetector.h"
 
-BallDetector::BallDetector(int pin) {
-    this->aio_context = mraa_aio_init(pin);
+BallDetector::BallDetector(int pin) : AnalogSensor(pin) {
     this->treshold = TRESHOLD_DEFAULT;
-}
-
-int BallDetector::getSensorValue() {
-    return mraa_aio_read(this->aio_context);
 }
 
 // return true if the photosensor value is under the treshold value
@@ -19,5 +14,5 @@ void BallDetector::setTreshold(int treshold) {
 }
 
 BallDetector::~BallDetector() {
-    mraa_aio_close(this->aio_context);
+    ~AnalogSensor();
 }
