@@ -5,7 +5,7 @@ Player::Player(){
     this->number = 1;
 }
 
-Player::Player(String name){
+Player::Player(int number){
     this->score = 0;
     this->number = number;
 }
@@ -14,7 +14,7 @@ void Player::addScore(int gain){
     this->score += gain;
 }
 
-void setNumber(int number){
+void Player::setNumber(int number){
     this->number = number;
 }
 

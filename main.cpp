@@ -12,7 +12,6 @@ using namespace std;
 int main(void){
 
 	PinBall pinball();
-	pinball.startGame();
-
+	
 	return 0;
 }

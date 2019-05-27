@@ -8,7 +8,7 @@
 
 #define TRESHOLD_DEFAULT 400
 
-class BallDetector {
+class BallDetector : public AnalogSensor{
 private:
     int treshold;
 

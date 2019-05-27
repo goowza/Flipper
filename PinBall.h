@@ -6,17 +6,39 @@
 #include <mraa/common.h>
 #include "Screen.h"
 #include "Player.h"
+#include "BallDetector.h"
+#include "Buzzer.h"
+#include "Led.h"
+#include "Flipper.h"
 
+#include <vector>
+
+struct Pins {
+	int pinBuzzer;
+	int pinFlipperButtonLeft;
+	int pinFlipperButtonRight;
+	int pinFlipperSolenoidLeft;
+	int pinFlipperSolenoidRight;
+	vector<int> pinDetectors;
+	vector<int> pinLeds;
+};
 
 class PinBall{
 	private:
 		int nbTry;
-		Screen sc;
+		Screen scoreboard;
 		Player player;
+		vector<BallDetector> detectors;
+		Buzzer buzzer;
+		Flipper flipper_left;
+		Flipper flipper_right;
+		vector<Led> leds;
+
 	public:
-		PinBall();
+		PinBall(Pins pin_definition);
 		~PinBall();
-		void startGame(String player_name);
+		void init();
+		void startGame();
 		void loopGame();
 		int stopGame();
 		int getNbTry();

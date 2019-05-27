@@ -8,12 +8,13 @@
 
 
 class DigitalActuator{
-	private:
+	protected:
 		mraa_gpio_context m_gpio;	
 		int state;
 	public:
+		DigitalActuator();
 		DigitalActuator(int pinActuator);
-		~DigitalActuator();
+		virtual ~DigitalActuator();
 		virtual void setHigh()=0;
 		virtual void setLow()=0;
 };

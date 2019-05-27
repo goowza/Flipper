@@ -12,7 +12,7 @@ private:
 public:
     AnalogSensor(int pin);
     int getSensorValue();
-    ~AnalogSensor();
+    virtual ~AnalogSensor();
 };
 
 #endif

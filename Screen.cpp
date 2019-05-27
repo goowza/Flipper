@@ -2,6 +2,7 @@
 #include <mraa/i2c.h>
 #include <unistd.h>
 #include <iostream>
+#include <stdlib.h>
 
 #define LCD_CLEARDISPLAY 0x01
 #define LCD_RETURNHOME 0x02
@@ -96,7 +97,9 @@ void Screen::Ecrire(string s){
 }
 
 void Screen::afficherScore(Player player){
-    String msg = "Score : " + to_string(player.getScore());
+    char buffer[10];
+    sprintf(buffer,"Score : %d",player.getScore());
+    string msg = string(buffer);
 	this->Ecrire(msg);
 }
 

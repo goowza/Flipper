@@ -5,16 +5,17 @@
 #include <mraa/common.h>
 #include <mraa/aio.h>
 #include <mraa/gpio.h>
+#include "DigitalActuator.h"
 
-
-class Flipper{
+class Flipper : public DigitalActuator{
 	private:
 		mraa_gpio_context m_gpio_butt;		
 	public:
-		Flipper(int pinB);
+		Flipper();
+		Flipper(int pinB, int pinS);
 		~Flipper();
-		void setHigh(int button);
-		void setDown(int button, int sol);
+		void setHigh();
+		void setLow();
 		void TestFlipper();
 };
 

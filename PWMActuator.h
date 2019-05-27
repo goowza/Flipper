@@ -5,13 +5,16 @@
 #include <mraa/pwm.h>
 
 class PWMActuator {
-private:
-    mraa_pwm_context pwm_context;
+
+protected:
     float duty_cycle;
+    mraa_pwm_context pwm_context;
 
 public:
+    PWMActuator();
     PWMActuator(int pin);
-    ~PWMActuator();
+    void setDutyCycle(float duty_cycle);
+    virtual ~PWMActuator();
 };
 
 

@@ -8,6 +8,7 @@
 class Buzzer : public PWMActuator{
 
 public:
+    Buzzer();
     Buzzer(int pin);
     void playPWM(float duty_cycle);
     ~Buzzer();

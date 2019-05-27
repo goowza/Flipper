@@ -13,6 +13,4 @@ void BallDetector::setTreshold(int treshold) {
     this->treshold = treshold;
 }
 
-BallDetector::~BallDetector() {
-    ~AnalogSensor();
-}
+BallDetector::~BallDetector() {}
