@@ -9,15 +9,10 @@ PinBall::PinBall(){
 	this->player = new Player();
 	this->sc = new Screen();
 }
-PinBall::~PinBall(){
-	
-}
+PinBall::~PinBall(){}
+
 void PinBall::startGame(){
-
-	cout << "Entrez votre nom svp :" << endl;
-	cin << name << endl;
-	this->player.setName(name);
-
+	
 	sc.initScreen();
 	sc.home();
 	sc.Ecrire("Le flipper ") ;
@@ -36,6 +31,7 @@ void PinBall::loopGame(){
 	sc.home();
 	sc.afficherScore(this->player);
 }
+
 int PinBall::stopGame(){
 	sc.clearScreen();
 	sc.home();	

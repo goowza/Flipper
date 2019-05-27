@@ -2,20 +2,20 @@
 
 Player::Player(){
     this->score = 0;
-    this->name = "Anonymous"
+    this->number = 1;
 }
 
 Player::Player(String name){
     this->score = 0;
-    this->name = name;
+    this->number = number;
 }
 
 void Player::addScore(int gain){
     this->score += gain;
 }
 
-void setName(String name){
-    this->name = name;
+void setNumber(int number){
+    this->number = number;
 }
 
 int Player::getScore(){

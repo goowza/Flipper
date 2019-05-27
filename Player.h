@@ -7,14 +7,13 @@
 class Player {
 private:
     int score;
-    String name;
-
+    int number;
 public:
     Player();
-    Player(String name);
+    Player(int number);
 
     void addScore(int gain);
-    void setName(String name);
+    void setNumber(int number);
     int getScore();
 
     ~Player();

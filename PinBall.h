@@ -4,7 +4,6 @@
 #include <iostream>
 #include <mraa/pwm.h>
 #include <mraa/common.h>
-#
 #include "Screen.h"
 #include "Player.h"
 
