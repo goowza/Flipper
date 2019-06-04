@@ -18,6 +18,7 @@ class Flipper : public DigitalActuator{
 		void setLow();
 		void testFlipper();
 		void switchState();
+		int testButt();
 };
 
 #endif

@@ -10,24 +10,15 @@ Flipper::Flipper(int pinB, int pinS) : DigitalActuator(pinS){
 }
 
 void Flipper::setHigh(){
-	button = testButt();
+	int button = this->testButt();
 	if(button){
 		mraa_gpio_write(this->m_gpio, 1);		
 	}
 }
 
 void Flipper::setLow(){
-	button = testButt();
-	sol = testFlipper();	
-	if(!button && sol)
-	{
-		mraa_gpio_write(this->m_gpio, 0);		
-	}
-}
-
-void Flipper::setLow(){
-	button = testButt();
-	sol = testFlipper();	
+	int button = testButt();
+	int sol = testFlipper();	
 	if(!button && sol)
 	{
 		mraa_gpio_write(this->m_gpio, 0);		
