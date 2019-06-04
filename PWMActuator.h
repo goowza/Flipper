@@ -14,6 +14,7 @@ public:
     PWMActuator();
     PWMActuator(int pin);
     void setDutyCycle(float duty_cycle);
+    void setPeriodUs(int period);
     virtual ~PWMActuator();
 };
 
