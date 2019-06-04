@@ -15,6 +15,10 @@ void PWMActuator::setDutyCycle(float duty_cycle){
     this->duty_cycle = duty_cycle;
 }
 
+void PWMActuator::setPeriodUs(int period){
+    mraa_pwm_period_us(this->pwm_context,period);
+}
+
 PWMActuator::~PWMActuator(){
     mraa_pwm_close(this->pwm_context);
 }
