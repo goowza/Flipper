@@ -11,11 +11,7 @@ using namespace std;
 #define PWM_PIN 5
 
 int main(void){
-
-	//PinBall pinball();
-	BallDetector b(PWM_PIN);
-    while(1){
-        printf("%d",b->getSensorValue());
-    }
+	PinBall pinball;
+	pinball.startGame();
 	return 0;
 }

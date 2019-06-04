@@ -57,7 +57,8 @@ mraa_result_t i2cReg (mraa_i2c_context ctx, int deviceAdress, int addr, uint8_t 
 }
 
 
-Screen::Screen(){		
+Screen::Screen(){
+	this->initScreen();	
 }
 
 void Screen::initScreen(){

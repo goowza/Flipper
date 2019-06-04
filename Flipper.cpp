@@ -32,12 +32,12 @@ int Flipper::testButt()
 }
 
 int Flipper::testFlipper(){
-	int state = mraa_gpio_read(this->m_gpio_sol);
-	return state;
+	//int state = mraa_gpio_read(this->m_gpio_sol);
+	return -1;
 }
 
 void Flipper::switchState(){
 	this->setHigh();
-	this->setDown();
+	this->setLow();
 }
 Flipper::~Flipper(){}

@@ -1,6 +1,7 @@
 #include "Led.h"
 #include <unistd.h>
 #include <iostream>
+#include "DigitalActuator.h"
 
 Led::Led(int pinB) : DigitalActuator(pinB){}
 

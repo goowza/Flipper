@@ -12,7 +12,7 @@
 
 using namespace std;
 
-enum Songs {
+/*enum Songs {
     tetris
 };
 
@@ -29,6 +29,6 @@ public:
 private:
     //void readSong(const list<pair<string,string> > sequence);
     void readSong(const list<int> sequence);
-};
+};*/
 
 #endif

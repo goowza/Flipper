@@ -29,13 +29,13 @@ class PinBall{
 		Screen scoreboard;
 		Player player;
 		vector<BallDetector> detectors;
-		Buzzer buzzer;
+		//Buzzer buzzer;
 		Flipper flipper_left;
 		Flipper flipper_right;
 		vector<Led> leds;
 
 	public:
-		PinBall(Pins pin_definition);
+		PinBall();
 		~PinBall();
 		void init();
 		void startGame();

@@ -4,12 +4,12 @@
 
 using namespace std;
 
-PinBall::PinBall(Pins pin_definition) : 
-	buzzer(pin_definition.pinBuzzer)
+PinBall::PinBall(){
+	/*buzzer(pin_definition.pinBuzzer)
 	 {
 	vector<int>::iterator it;
 
-	this->nbTry = 0;
+	this->nbTry = 0;*/
 
 	/*this->flipper_left = new Flipper(pin_definition.pinFlipperButtonLeft,pin_definition.pinFlipperSolenoidLeft);
 	this->flipper_right = new Flipper(pin_definition.pinFlipperButtonRight,pin_definition.pinFlipperSolenoidRight);
@@ -21,27 +21,27 @@ PinBall::PinBall(Pins pin_definition) :
 	for(it = pin_definition.pinLeds.begin();it != pin_definition.pinLeds.end();it++){
 		this->leds.push_back(new Led(*it));
 	}*/
+	
 }
 PinBall::~PinBall(){}
 
 
 void PinBall::startGame(){
-	this->scoreboard->Ecrire("Lancement du jeu...");
-	//this->flipper_left.setDown();
-	//this->flipper_right.setDown();
+	this->scoreboard.Ecrire("Lancement du jeu...");
+
 }
 
 void PinBall::loopGame(){
-	/*sc.clearScreen();
-	sc.nbLine(2,1);
-	sc.home();
-	sc.afficherScore(this->player);*/
+	this->scoreboard.clearScreen();
+	this->scoreboard.nbLine(2,1);
+	this->scoreboard.home();
+	this->scoreboard.afficherScore(this->player);
 }
 
 int PinBall::stopGame(){
-	/*sc.clearScreen();
-	sc.home();	
-	sc.Ecrire("Fin du jeu");*/
+	this->scoreboard.clearScreen();
+	this->scoreboard.home();	
+	this->scoreboard.Ecrire("Fin du jeu");
 	return -1;
 }
 int PinBall::getNbTry(){

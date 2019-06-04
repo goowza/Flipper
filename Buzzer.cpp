@@ -1,6 +1,6 @@
 #include "Buzzer.h"
 
-Buzzer::Buzzer() : PWMActuator(){}
+/*Buzzer::Buzzer() : PWMActuator(){}
 
 Buzzer::Buzzer(int pin) : PWMActuator(pin){}
 
@@ -16,7 +16,7 @@ void Buzzer::playSong(Songs song) {
         default:
             break;
     }
-}
+}*/
 
 /*void Buzzer::readSong(const list<pair<string,string> > sequence){
 	list<pair<string,string> >::const_iterator songposition;
@@ -49,7 +49,7 @@ void Buzzer::playSong(Songs song) {
 }*/
 
 
-Buzzer::~Buzzer(){}
+//Buzzer::~Buzzer(){}
 
 /*pin=12 #This is one of two Hardware PWM Pins of the RPi, every other pin will work fine aswell, but software emulated (higher CPU load!)
 GPIO.setwarnings(False)
@@ -61,7 +61,7 @@ p=GPIO.PWM(pin, 10)*/
 #Below notes are mixed in octave (fourth & fifth), for tetris example
 #The '#' note is my variable for a break/pause, it's freq is 0.5. This is not silenced, but the lowest I could get.
 #A better way to silence the piezo would be by changing the dutycycle to 0% or 100% (constant off or on, no matter the frequency)*/
-const map<string,float> notes = {
+/*const map<string,float> notes = {
     {"C" , 523.25},
     {"D" , 587.33},
     {"E" , 659.25},
@@ -71,22 +71,22 @@ const map<string,float> notes = {
     {"B" , 493.88},
     {"#" , 0.0},
     {"Ab" , 415.30}
-};
+};*/
 
 /* Divide a whole note to get a half note doesn't sound good, duration timings are therefore not divided by two. */
-const map<string,float> speed = {
+/*const map<string,float> speed = {
     {"sw" , 1},
     {"w" , 0.8},
     {"h" , 0.6},
     {"q" , 0.45},
     {"qh" , 0.25},
     {"qhh" , 0.15}
-};
+};*/
 
 /* Main Part of tetris, sequence 1
 note*/
 
-const list<pair<string,string>> tetris = {
+/*const list<pair<string,string>> tetris = {
     {"E","q"},
     {"B","qh"},
     {"C","qh"},
@@ -125,7 +125,7 @@ const list<pair<string,string>> tetris = {
     {"A","h"},
     {"A","h"},
     {"#","w"}
-};
+};*/
 /* #Break, sequence 2 */ 
 /*const string s2[] = ['E-sw','C-sw','D-sw','B-sw','C-sw','A-sw','Ab-sw','B-w','#-q',
 'E-sw','C-sw','D-sw','B-sw','C-h','A-h','A-h','Ab-sw','#-sw'];*/
