@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <unistd.h>
 
 class Player {
 private:

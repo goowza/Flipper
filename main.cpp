@@ -8,10 +8,16 @@
 #include "BallDetector.h"
 using namespace std;
 
-#define PWM_PIN 5
 
 int main(void){
-	PinBall pinball;
+	int fin = 0;
+	Pins P;
+	P.pinDetectors=0;
+	PinBall pinball(P);
 	pinball.startGame();
+	while(pinball.loopGame()){
+		cout << pinball.detectors.getSensorValue()<<endl;
+	}
+	pinball.stopGame();
 	return 0;
 }

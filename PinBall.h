@@ -14,13 +14,13 @@
 #include <vector>
 
 struct Pins {
-	int pinBuzzer;
-	int pinFlipperButtonLeft;
-	int pinFlipperButtonRight;
-	int pinFlipperSolenoidLeft;
-	int pinFlipperSolenoidRight;
-	vector<int> pinDetectors;
-	vector<int> pinLeds;
+	//int pinBuzzer;
+	//int pinFlipperButtonLeft;
+	//int pinFlipperButtonRight;
+	//int pinFlipperSolenoidLeft;
+	//int pinFlipperSolenoidRight;
+	int pinDetectors;
+	//vector<int> pinLeds;
 };
 
 class PinBall{
@@ -28,20 +28,21 @@ class PinBall{
 		int nbTry;
 		Screen scoreboard;
 		Player player;
-		vector<BallDetector> detectors;
 		//Buzzer buzzer;
 		Flipper flipper_left;
 		Flipper flipper_right;
 		vector<Led> leds;
+		mraa_gpio_context ButtonStart;
 
 	public:
-		PinBall();
+		PinBall(Pins P);
 		~PinBall();
 		void init();
 		void startGame();
-		void loopGame();
+		int loopGame();
 		int stopGame();
 		int getNbTry();
+		BallDetector detectors;
 };
 
 #endif

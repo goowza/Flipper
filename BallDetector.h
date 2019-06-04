@@ -6,7 +6,7 @@
 #include <mraa.hpp>
 #include "AnalogSensor.h"
 
-#define TRESHOLD_DEFAULT 400
+#define TRESHOLD_DEFAULT 500;
 
 class BallDetector : public AnalogSensor{
 private:

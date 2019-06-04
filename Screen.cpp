@@ -98,6 +98,7 @@ void Screen::Ecrire(string s){
 }
 
 void Screen::afficherScore(Player player){
+	this->home();
     char buffer[10];
     sprintf(buffer,"Score : %d",player.getScore());
     string msg = string(buffer);
