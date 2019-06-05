@@ -25,11 +25,11 @@ PinBall::~PinBall(){
 
 
 void PinBall::startGame(){
-	this->scoreboard.Ecrire("Lancement du jeu...");
+	this->scoreboard.write("Lancement du jeu...");
 	while(!mraa_gpio_read(this->ButtonStart)){
 	}
 	this->scoreboard.clearScreen();
-	this->scoreboard.afficherScore(this->player);
+	this->scoreboard.displayScore(this->player);
 	sleep(1);
 }
 
@@ -40,7 +40,7 @@ int PinBall::loopGame(){
 		this->player.addScore(5);
 	}
 	if(score != player.getScore()){
-		this->scoreboard.afficherScore(this->player);
+		this->scoreboard.displayScore(this->player);
 		score = player.getScore();
 	}
 
@@ -53,7 +53,7 @@ int PinBall::loopGame(){
 int PinBall::stopGame(){
 	this->scoreboard.clearScreen();
 	this->scoreboard.home();	
-	this->scoreboard.Ecrire("Fin du jeu");
+	this->scoreboard.write("Fin du jeu");
 	return -1;
 }
 int PinBall::getNbTry(){

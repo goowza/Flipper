@@ -8,11 +8,11 @@ using namespace std;
 class Screen {
 public: 
 		void initScreen();
-		void afficherScore(Player player);
-		void Ecrire(string msg);
+		void displayScore(Player player);
+		void write(string msg);
 		void clearScreen();
 		void home();
-		void nbLine(int row, int column);
+		void setCursor(int row, int column);
 		Screen();
 };
 

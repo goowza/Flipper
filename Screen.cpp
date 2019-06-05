@@ -91,18 +91,18 @@ void Screen::initScreen(){
     i2cReg (m_i2c_lcd_rgb, m_rgb_control_addr, 0x02, 100);
 
 } 
-void Screen::Ecrire(string s){
+void Screen::write(string s){
 	for(string::size_type i = 0; i < s.size(); i++){
 		i2cData (m_i2c_lcd_control, s[i]);
 	}
 }
 
-void Screen::afficherScore(Player player){
+void Screen::displayScore(Player player){
 	this->home();
     char buffer[10];
     sprintf(buffer,"Score : %d",player.getScore());
     string msg = string(buffer);
-	this->Ecrire(msg);
+	this->write(msg);
 }
 
 void Screen::clearScreen(){
@@ -114,7 +114,7 @@ void Screen::home(){
     i2Cmd (m_i2c_lcd_control, LCD_RETURNHOME);
     usleep(4500);	
 }
-void Screen::nbLine(int row, int column){
+void Screen::setCursor(int row, int column){
     int row_addr[] = { 0x80, 0xc0, 0x14, 0x54};
     uint8_t offset = ((column % 16) + row_addr[row]);
     i2Cmd (m_i2c_lcd_control, offset);	
