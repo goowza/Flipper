@@ -12,15 +12,22 @@ Player::Player(int number){
 
 void Player::addScore(int gain){
     this->score += gain;
-    sleep(1);
 }
 
 void Player::setNumber(int number){
     this->number = number;
 }
 
-int Player::getScore(){
+int Player::getScore() const {
     return this->score;
 }
 
+int Player::getNumber() const {
+    return this->number;
+}
+
 Player::~Player(){}
+
+void Player::displayPlayer(ostream & flux) const {
+    flux << "Joueur " << this->getNumber() << " : " << this->getScore();
+}

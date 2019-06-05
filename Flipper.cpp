@@ -1,6 +1,4 @@
 #include "Flipper.h"
-#include <unistd.h>
-#include <iostream>
 
 Flipper::Flipper() : DigitalActuator(){}
 

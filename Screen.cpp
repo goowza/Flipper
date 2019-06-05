@@ -1,8 +1,4 @@
 #include "Screen.h"
-#include <mraa/i2c.h>
-#include <unistd.h>
-#include <iostream>
-#include <stdlib.h>
 
 #define LCD_CLEARDISPLAY 0x01
 #define LCD_RETURNHOME 0x02

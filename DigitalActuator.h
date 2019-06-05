@@ -5,7 +5,7 @@
 #include <mraa/common.h>
 #include <mraa/aio.h>
 #include <mraa/gpio.h>
-
+#include <unistd.h>
 
 class DigitalActuator{
 	protected:

@@ -4,6 +4,9 @@
 #include <iostream>
 #include <mraa/pwm.h>
 #include <mraa/common.h>
+#include <unistd.h>
+#include <vector>
+
 #include "Screen.h"
 #include "Player.h"
 #include "BallDetector.h"
@@ -11,28 +14,18 @@
 #include "Led.h"
 #include "Flipper.h"
 
-#include <vector>
-
 struct Pins {
-	//int pinBuzzer;
-	//int pinFlipperButtonLeft;
-	//int pinFlipperButtonRight;
-	//int pinFlipperSolenoidLeft;
-	//int pinFlipperSolenoidRight;
+	int pinBuzzer;
 	int pinDetectors;
-	//vector<int> pinLeds;
 };
 
 class PinBall{
 	private:
-		int nbTry;
 		Screen scoreboard;
 		Player player;
-		//Buzzer buzzer;
-		Flipper flipper_left;
-		Flipper flipper_right;
-		vector<Led> leds;
+		Buzzer buzzer;
 		mraa_gpio_context ButtonStart;
+		BallDetector detectors;
 
 	public:
 		PinBall(Pins P);
@@ -41,8 +34,8 @@ class PinBall{
 		void startGame();
 		int loopGame();
 		int stopGame();
-		int getNbTry();
-		BallDetector detectors;
+
+		Player getPlayer();
 };
 
 #endif

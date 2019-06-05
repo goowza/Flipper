@@ -6,6 +6,7 @@
 #include <mraa/aio.h>
 #include <mraa/gpio.h>
 #include "DigitalActuator.h"
+#include <unistd.h>
 
 class Led : public DigitalActuator{
 	private:	

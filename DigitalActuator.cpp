@@ -1,6 +1,4 @@
 #include "DigitalActuator.h"
-#include <unistd.h>
-#include <iostream>
 
 DigitalActuator::DigitalActuator() {}
 

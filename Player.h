@@ -1,9 +1,11 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <string>
+#include <string.h>
 #include <iostream>
 #include <unistd.h>
+
+using namespace std;
 
 class Player {
 private:
@@ -15,7 +17,10 @@ public:
 
     void addScore(int gain);
     void setNumber(int number);
-    int getScore();
+    int getNumber() const;
+    int getScore() const;
+
+    void displayPlayer(ostream & flux) const;
 
     ~Player();
 };

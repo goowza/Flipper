@@ -7,28 +7,26 @@
 #include <string>
 #include <stdlib.h>
 #include <list>
-#include <iterator>
-#include <iostream> 
+#include <map>
+#include <iostream>
+#include <unistd.h> 
 
 using namespace std;
-
-/*enum Songs {
-    tetris
-};
 
 class Buzzer : public PWMActuator{
 
 public:
+    map<string,float> notes;
+
     Buzzer();
     Buzzer(int pin);
-    void playPWM(float duty_cycle);
-    void playSong(Songs song);
-    void playNote(float freq);
+    void playStartMusic();
+    void playPointMusic();
+    void playStopMusic();
+    void playNote(string note);
+    void silence();
     ~Buzzer();
 
-private:
-    //void readSong(const list<pair<string,string> > sequence);
-    void readSong(const list<int> sequence);
-};*/
+};
 
 #endif

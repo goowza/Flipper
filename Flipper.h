@@ -5,6 +5,7 @@
 #include <mraa/common.h>
 #include <mraa/aio.h>
 #include <mraa/gpio.h>
+#include <unistd.h>
 #include "DigitalActuator.h"
 
 class Flipper : public DigitalActuator{
